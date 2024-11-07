@@ -5,7 +5,6 @@ function computerPlay() {
 }
 
 function playRound(playerSelection, computerSelection) {
-    // Make playerSelection case-insensitive
     playerSelection = playerSelection.toLowerCase();
     computerSelection = computerSelection.toLowerCase();
 
@@ -51,10 +50,8 @@ function game() {
 
         const computerSelection = computerPlay();
         
-        // Play one round and get the result
         const result = playRound(playerSelection, computerSelection);
         
-        // Display the result and update scores
         console.log(result);
         
         if (result.startsWith("You Win")) {
@@ -65,3 +62,20 @@ function game() {
 
         console.log(`Current Score - You: ${playerScore}, Computer: ${computerScore}`);
     }
+
+        if (playerScore > computerScore) {
+            console.log("\nCongratulations! You won the game!");
+        } else if (computerScore > playerScore) {
+            console.log("\nGame Over! The computer won the game.");
+        } else {
+            console.log("\nThe game is a tie!");
+        }
+    }
+    
+function startGame() {
+    alert("Welcome to the Rock, Paper, Scissors Game!!\n\nBefore pressing the OK button open DevTools form settings of your browser!\nThen press OK to start the game.");
+    console.log("Game started!");
+    setTimeout(game, 0);
+}
+
+startGame();
