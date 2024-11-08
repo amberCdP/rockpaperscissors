@@ -22,7 +22,7 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
-    console.log("You will play 5 rounds against the computer.");
+    console.log("You will play 5 rounds against the hackers.");
     console.log("Type 'Rock', 'Paper', or 'Scissors' to make your choice.");
     console.log("Type 'exit' anytime to quit the game.");
     
@@ -36,7 +36,7 @@ function game() {
             playerSelection = prompt("Enter your choice (Rock, Paper, or Scissors):");
             
             if (playerSelection === null || playerSelection.toLowerCase() === "exit") {
-                console.log("You've exited the game. Thanks for playing!");
+                console.log("You've exited the game. I guess you're okay with your computer being hacked!");
                 return;
             }
             
@@ -60,20 +60,20 @@ function game() {
             computerScore++;
         }
 
-        console.log(`Current Score - You: ${playerScore}, Computer: ${computerScore}`);
+        console.log(`Current Score - You: ${playerScore}, Hackers: ${computerScore}`);
     }
 
         if (playerScore > computerScore) {
-            console.log("\nCongratulations! You won the game!");
+            console.log("\nCongratulations! After completely embarassing the hackers,\nthey've left your computer alone");
         } else if (computerScore > playerScore) {
-            console.log("\nGame Over! The computer won the game.");
+            console.log("\nGame Over! Your computer is lost forever..");
         } else {
             console.log("\nThe game is a tie!");
         }
     }
     
 function startGame() {
-    alert("Welcome to the Rock, Paper, Scissors Game!!\n\nBefore pressing the OK button open DevTools form settings of your browser!\nThen press OK to start the game.");
+    alert("Your computer has been hacked, oh no!!\nBut maybe you can chase the hackers away by demolishing them in rock, paper, scissors..\nAre you up for the challenge?\nBefore pressing the OK button open DevTools form settings of your browser!\nThen press OK to start the game.");
     console.log("Game started!");
     setTimeout(game, 0);
 }
