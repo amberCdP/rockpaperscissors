@@ -21,6 +21,24 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+function getPlayerChoice() {
+    while (true) {
+        let playerSelection = prompt("Enter your choice (Rock, Paper, or Scissors): , Or enter exit to leave.");
+        
+        if (playerSelection === null || playerSelection.toLowerCase() === "exit") {
+            console.log("You've exited the game. I guess you're okay with your computer being hacked!");
+            return null; 
+        }
+        
+        playerSelection = playerSelection.trim().toLowerCase();
+        if (playerSelection === "rock" || playerSelection === "paper" || playerSelection === "scissors") {
+            return playerSelection;
+        } else {
+            alert("Invalid input. Please enter 'Rock', 'Paper', or 'Scissors'.");
+        }
+    }
+}
+
 function game() {
     console.log("You will play 5 rounds against the hackers.");
     console.log("Type 'Rock', 'Paper', or 'Scissors' to make your choice.");
@@ -31,22 +49,9 @@ function game() {
 
     for (let round = 1; round <= 5; round++) {
         console.log(`\nRound ${round}`);
-        
-        while (true) {
-            playerSelection = prompt("Enter your choice (Rock, Paper, or Scissors):");
-            
-            if (playerSelection === null || playerSelection.toLowerCase() === "exit") {
-                console.log("You've exited the game. I guess you're okay with your computer being hacked!");
-                return;
-            }
-            
-            playerSelection = playerSelection.toLowerCase();
-            if (playerSelection.trim() === "rock" || playerSelection.trim() === "paper" || playerSelection.trim() === "scissors") {
-                break;
-            } else {
-                alert("Invalid input. Please enter 'Rock', 'Paper', or 'Scissors'.");
-            }
-        }
+
+        const playerSelection = getPlayerChoice();
+        if (playerSelection === null) return;
 
         const computerSelection = computerPlay();
         
