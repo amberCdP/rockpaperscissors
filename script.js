@@ -41,7 +41,7 @@ function game() {
             }
             
             playerSelection = playerSelection.toLowerCase();
-            if (playerSelection === "rock" || playerSelection === "paper" || playerSelection === "scissors") {
+            if (playerSelection.trim() === "rock" || playerSelection.trim() === "paper" || playerSelection.trim() === "scissors") {
                 break;
             } else {
                 alert("Invalid input. Please enter 'Rock', 'Paper', or 'Scissors'.");
